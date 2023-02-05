@@ -37,11 +37,12 @@
     </v-navigation-drawer> -->
     <v-app-bar
       :clipped-left="clipped"
+      color="#84bd00"
       app
     >
       <!-- <v-app-bar-nav-icon @click.stop="drawer = !drawer" /> -->
       <v-spacer />
-      <v-toolbar-title v-text="title" />
+      <v-toolbar-title v-text="title" class="font-weight-bold white--text" />
       <v-spacer />
     </v-app-bar>
     <v-main>
