@@ -6,12 +6,13 @@ export default {
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    titleTemplate: '%s - porukatu-front',
-    title: 'porukatu-front',
+    titleTemplate: '%s - ポル活',
+    title: 'ポル活',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' }
+      { hid: 'description', name: 'description', content: 'ポルシェオーナーのポルシェオーナーによるポルシェオーナーのための情報サイト' },
+      { hid: 'keywords', name: 'keywords', content: 'ポルシェ,ポルシェオーナー,911,ボクスター,Boxster,ケイマン,Cayman' },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
