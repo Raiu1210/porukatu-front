@@ -33,7 +33,7 @@
                 <p>pass</p>
               </v-col>
               <v-col cols="10">
-                <v-text-field solo />
+                <v-text-field solo v-model="newsRegisterObj.password" />
               </v-col>
             </v-row>
             <v-row justify="center" align="center">
@@ -75,7 +75,7 @@
                 <p>pass</p>
               </v-col>
               <v-col cols="10">
-                <v-text-field solo />
+                <v-text-field solo v-model="roadRegisterObj.password"/>
               </v-col>
             </v-row>
 
@@ -158,7 +158,7 @@
                 <p>pass</p>
               </v-col>
               <v-col cols="10">
-                <v-text-field solo />
+                <v-text-field solo v-model="parkingRegisterObj.password"/>
               </v-col>
             </v-row>
 
@@ -241,7 +241,7 @@
                 <p>pass</p>
               </v-col>
               <v-col cols="10">
-                <v-text-field solo />
+                <v-text-field solo v-model="gourmetRegisterObj.password"/>
               </v-col>
             </v-row>
 
@@ -372,7 +372,7 @@
                 <p>pass</p>
               </v-col>
               <v-col cols="10">
-                <v-text-field solo />
+                <v-text-field solo v-model="repairShopRegisterObj.password"/>
               </v-col>
             </v-row>
 
@@ -496,8 +496,6 @@
         </v-tab-item>
       </v-tabs-items>
     </v-card>
-
-    {{endPoints[itemId]}}
   </div>
 </template>
 
@@ -535,10 +533,12 @@ export default {
         '/plot/add_repair_shop'
       ],
       newsRegisterObj: {
+        password: "",
         title: "",
         link: ""
       },
       roadRegisterObj: {
+        password: "",
         name: "",
         link: "",
         description: "",
@@ -548,6 +548,7 @@ export default {
         star: 0
       },
       parkingRegisterObj: {
+        password: "",
         name: "",
         link: "",
         description: "",
@@ -557,6 +558,7 @@ export default {
         image_path: "",
       },
       gourmetRegisterObj: {
+        password: "",
         name: "",
         tel: "",
         link: "",
@@ -571,6 +573,7 @@ export default {
         product_img_3: ""
       },
       repairShopRegisterObj: {
+        password: "",
         name: "",
         tel: "",
         link: "",
