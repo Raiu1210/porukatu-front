@@ -567,10 +567,10 @@ export default {
         lon: 0.0,
         star: 0,
         outside_img: "",
-        product_img_0: "",
-        product_img_1: "",
-        product_img_2: "",
-        product_img_3: ""
+        optional_img_0: "",
+        optional_img_1: "",
+        optional_img_2: "",
+        optional_img_3: ""
       },
       repairShopRegisterObj: {
         password: "",
