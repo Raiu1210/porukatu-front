@@ -1,25 +1,17 @@
 <template>
   <v-container fluid>
-    <v-card class="px-3 py-1">
-      <v-radio-group inline v-model="selectedDataType" >
-        <v-row justify="center" align="center">
-          <v-col cols="5">
-            <v-radio label="イイ道" value="road" v-on:change="resetMarker"></v-radio>
-          </v-col>
-          <v-col cols="5">
-            <v-radio label="駐車場" value="parking" v-on:change="resetMarker"></v-radio>
-          </v-col>
-        </v-row>
-        <v-row justify="center" align="center" v-on:change="resetMarker">
-          <v-col cols="5">
-            <v-radio label="グルメ" value="gourmet" v-on:change="resetMarker"></v-radio>
-          </v-col>
-          <v-col cols="5">
-            <v-radio label="整備工場" value="repair_shop" v-on:change="resetMarker"></v-radio>
-          </v-col>
-        </v-row>
-      </v-radio-group>
-    </v-card>
+    <v-row justify="center" align="center">
+      <v-col cols="12">
+        <v-select
+          :items="displayData"
+          item-text="label"
+          item-value="value"
+          v-model="selectedDataType"
+          v-on:change="resetMarker"
+          variant="solo"
+        ></v-select>
+      </v-col>
+    </v-row>
 
     <v-card id="map_card">
       <l-map class="mt-2" ref="map" style="z-index: 0;" :zoom=5 :center="[38.70861166023441, 136.69785256833234]">
@@ -30,20 +22,21 @@
           :key="index"
           @click="onClickMarker(index, plot)"
         >
-          <l-popup>
+          <!-- <l-popup>
             <div class="primary--text">{{plot.name}}</div>
-          </l-popup>
+          </l-popup> -->
         </l-marker>
       </l-map>
     </v-card>
 
 
     <v-card class="mx-auto my-4" v-if="infoWinOpen">
+      <v-card-title>{{plot['name']}}</v-card-title>
       <v-img
-        height="300"
+        height="200"
         :src="getTopImgPath(plot, selectedDataType)"
       ></v-img>
-      <v-card-title>{{plot['name']}}</v-card-title>
+
       <v-card-text class="text--primary" style="white-space:pre-wrap; word-wrap:break-word;">
         {{plot['description']}}<br />
       </v-card-text>
@@ -68,6 +61,26 @@
           <v-icon>mdi-phone-in-talk</v-icon>
         </v-btn>
       </a>
+
+      <v-row justify="center" align="center" class="pa-3">
+        <v-col cols="6">
+          <v-img height="100" :src="plot['optional_img_0']" v-if="plot['optional_img_0']" />
+        </v-col>
+
+        <v-col cols="6">
+          <v-img height="100" :src="plot['optional_img_1']" v-if="plot['optional_img_1']" />
+        </v-col>
+      </v-row>
+
+      <v-row justify="center" align="center" class="pa-3">
+        <v-col cols="6">
+          <v-img height="100" :src="plot['optional_img_2']" v-if="plot['optional_img_2']" />
+        </v-col>
+
+        <v-col cols="6">
+          <v-img height="100" :src="plot['optional_img_3']" v-if="plot['optional_img_3']" />
+        </v-col>
+      </v-row>
     </v-card>
   </v-container>
 </template>
@@ -81,7 +94,13 @@ export default {
     return {
       infoWinOpen: false,
       selectedDataType: "road",
-      displayData: [],
+      selectLabel: ["イイ道", "駐車場", "グルメ", "整備工場"],
+      displayData: [
+        {label:"イイ道", value: "road"},
+        {label:"駐車場", value: "parking"},
+        {label:"グルメ", value: "gourmet"},
+        {label:"整備工場", value: "repair_shop"}
+      ],
       plot: {},
       plots: {}
     }

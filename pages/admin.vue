@@ -628,25 +628,25 @@ export default {
         var formdata = new FormData()
         formdata.append('file', this.productImg0)
         const res = await imageUploader.post('/uploadfile', formdata)
-        this.gourmetRegisterObj['product_img_0'] = baseURL + '/' + res['data']['saved_file_path']
+        this.gourmetRegisterObj['optional_img_0'] = baseURL + '/' + res['data']['saved_file_path']
       }
       if (this.productImg1 != null) {
         var formdata = new FormData()
         formdata.append('file', this.productImg1)
         const res = await imageUploader.post('/uploadfile', formdata)
-        this.gourmetRegisterObj['product_img_1'] = baseURL + '/' + res['data']['saved_file_path']
+        this.gourmetRegisterObj['optional_img_1'] = baseURL + '/' + res['data']['saved_file_path']
       }
       if (this.productImg2 != null) {
         var formdata = new FormData()
         formdata.append('file', this.productImg2)
         const res = await imageUploader.post('/uploadfile', formdata)
-        this.gourmetRegisterObj['product_img_2'] = baseURL + '/' + res['data']['saved_file_path']
+        this.gourmetRegisterObj['optional_img_2'] = baseURL + '/' + res['data']['saved_file_path']
       }
       if (this.productImg3 != null) {
         var formdata = new FormData()
         formdata.append('file', this.productImg3)
         const res = await imageUploader.post('/uploadfile', formdata)
-        this.gourmetRegisterObj['product_img_3'] = baseURL + '/' + res['data']['saved_file_path']
+        this.gourmetRegisterObj['optional_img_3'] = baseURL + '/' + res['data']['saved_file_path']
       }
       const res = await Api.post('/plot/add_gourmet', this.gourmetRegisterObj)
       alert(res['data']['message'])
