@@ -39,6 +39,10 @@ export default {
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
     'nuxt-leaflet',
+    [
+      '@nuxtjs/google-gtag',
+      { id: 'G-ER0EB1PXYM', debug: true}
+    ],
   ],
 
   // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)
