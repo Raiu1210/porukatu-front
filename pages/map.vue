@@ -42,6 +42,7 @@
       </v-card-text>
 
       <v-rating
+        v-if="plot['star'] != 0"
         length="3"
         readonly
         color="#FF6F00"
