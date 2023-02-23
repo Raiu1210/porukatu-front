@@ -83,6 +83,17 @@
         </v-col>
       </v-row>
     </v-card>
+
+    <v-alert
+      class="mt-5"
+      type="info"
+      text=""
+    >
+      星の意味<br />
+      星1 : 近くなら寄るのオススメ<br />
+      星2 : 遠回りしても寄るのオススメ<br />
+      星3 : ドライブの目的にオススメ<br />
+    </v-alert>
   </v-container>
 </template>
 

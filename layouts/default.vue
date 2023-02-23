@@ -42,7 +42,9 @@
     >
       <!-- <v-app-bar-nav-icon @click.stop="drawer = !drawer" /> -->
       <v-spacer />
-      <v-toolbar-title v-text="title" class="font-weight-bold white--text" />
+      <nuxt-link to="/" class="home">
+        <v-toolbar-title v-text="title" class="font-weight-bold white--text" />
+      </nuxt-link>
       <v-spacer />
     </v-app-bar>
     <v-main>
@@ -87,3 +89,8 @@ export default {
 }
 </script>
 
+<style scoped>
+.home {
+  text-decoration:none;
+}
+</style>
