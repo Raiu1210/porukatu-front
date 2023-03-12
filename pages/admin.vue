@@ -36,10 +36,6 @@
 </template>
 
 <script>
-import {axiosInstance as Api} from '~/myModules/api'
-import {imageUploader as imageUploader} from '~/myModules/imageUploader'
-import 'vue-img-inputer/dist/index.css'
-
 import RegisterNews from '~/components/RegisterNews'
 import RegisterRoad from '~/components/RegisterRoad'
 import RegisterParking from '~/components/RegisterParking'
@@ -52,13 +48,6 @@ export default {
       itemId: null,
       items: [
         'news', 'road', 'parking', 'gourmets', 'repair_shop',
-      ],
-      endPoints: [
-        '/news/register_news',
-        '/plot/add_road',
-        '/plot/add_parking',
-        '/plot/add_gourmet',
-        '/plot/add_repair_shop'
       ],
     }
   },
