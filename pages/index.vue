@@ -21,6 +21,26 @@
                 ツーリングに役立つ情報を地図にまとめ。広い駐車場、整備工場、グルメスポット
               </v-card-text>
             </v-img>
+          </v-card>
+        </nuxt-link>
+      </v-col>
+    </v-row>
+
+    <v-row justify="center" align="center">
+      <v-col cols="12" sm="10" md="10">
+        <nuxt-link to="/info" tag="div" class="nl">
+          <v-card>
+            <v-img
+              src="/notebook.jpg"
+              class="white--text align-end"
+              gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
+              height="200px"
+            >
+              <v-card-title class="headline font-weight-bold">ポルシェ役立ち情報</v-card-title>
+              <v-card-text class="white--text">
+                ポルシェオーナーが知っておきたいポルシェの歴史、知識、tipsまとめ
+              </v-card-text>
+            </v-img>
 
 
           </v-card>
@@ -36,11 +56,6 @@ import NewsCard from '~/components/NewsCard.vue'
 export default {
   data() {
     return {
-      test: [
-        'aaa',
-        'bbb',
-        'ccc'
-      ]
     }
   },
   components: {
